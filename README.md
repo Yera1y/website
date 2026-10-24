@@ -12,7 +12,7 @@ Personal engineering portfolio of **JustCreate**, styled like a *contraption dia
 |---|---|
 | Domain | [just-create.tech](https://just-create.tech) |
 | Nickname | JustCreate |
-| Full name | placeholder |
+| Full name | Yeraly |
 | Email | Email@gmail.com |
 | GitHub | [github.com/Yera1y](https://github.com/Yera1y) |
 | Quote | Above and beyond |
@@ -20,7 +20,7 @@ Personal engineering portfolio of **JustCreate**, styled like a *contraption dia
 ## Concept
 
 - The page is a **table** (neutral stone background) with two sheets on it.
-- **Left:** a torn paper menu, always visible.
+- **Left:** a torn paper menu, visibility can be toggled.
 - **Right:** a big blueprint sheet with a grid, tick marks, rolled edges and small margin formulas.
 - Force arrows and hover tooltips (like "Gravity force of 5.50 N") connect the diagram idea to the content. The three project blocks hang on one green arrow, like parts of a contraption.
 
