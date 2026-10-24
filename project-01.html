@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRJ-01 | Yeraly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="table">
+
+  <!-- LEFT: bookmarks = go to another page, paper lines = jump inside this page -->
+  <nav class="menu" aria-label="Site navigation">
+    <div class="bookmarks">
+      <a href="index.html" style="--c:var(--green)" data-label="Home" aria-label="Home"></a>
+      <a href="project-01.html" class="active" style="--c:var(--brown)" data-label="Project 01" aria-label="Project 01" aria-current="page"></a>
+      <a href="project-02.html" style="--c:var(--purple)" data-label="Project 02" aria-label="Project 02"></a>
+      <a href="project-03.html" style="--c:var(--orange)" data-label="Project 03" aria-label="Project 03"></a>
+      <a href="index.html#contact" style="--c:var(--blue)" data-label="Contact" aria-label="Contact"></a>
+    </div>
+    <div class="paper-wrap">
+      <div class="paper">
+        <ul>
+          <li><a href="#heading" style="--c:var(--green)">Heading</a></li>
+          <li><a href="#information" style="--c:var(--brown)">Information</a></li>
+          <li><a href="#photos" style="--c:var(--orange)">Photos</a></li>
+          <li><a href="#research" style="--c:var(--purple)">Research</a></li>
+          <li><a href="#results" style="--c:var(--red)">Results</a></li>
+          <li class="blank" aria-hidden="true"></li>
+        </ul>
+        <svg class="doodle" viewBox="0 0 54 50" fill="none" stroke="#c9a98a" stroke-width="2.5" stroke-linecap="square" aria-hidden="true">
+          <path d="M6 44 C8 26 20 14 34 16 C44 18 46 30 38 34 C32 37 28 30 33 26"/>
+          <path d="M28 8 L40 14 L34 24"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RIGHT: blueprint sheet -->
+  <div class="sheet-wrap">
+    <span class="curl curl-l" aria-hidden="true"></span>
+    <span class="curl curl-r" aria-hidden="true"></span>
+
+    <main class="sheet" id="top">
+
+      <div class="tools" aria-hidden="true">
+        <span><svg viewBox="0 0 16 16"><path d="M1 2h14v2H1zM1 6h9v2H1zM1 10h14v2H1zM1 14h8v2H1z" stroke="none"/></svg></span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><path d="M2 5h11M10 2l3 3-3 3M2 12h11M10 9l3 3-3 3"/></svg></span>
+        <span><svg viewBox="0 0 16 16" stroke="none"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="#8f8872"/></svg></span>
+        <span><svg viewBox="0 0 16 16" stroke-width="2.4" stroke-linecap="square"><path d="M4.5 11.5l7-7"/><circle cx="3.5" cy="12.5" r="2.4" stroke="none"/><circle cx="12.5" cy="3.5" r="2.4" stroke="none"/></svg></span>
+      </div>
+      <a class="compass" href="#top" aria-label="Back to top">
+        <svg viewBox="0 0 32 32" fill="#b3ab92"><path d="M16 3l4 5h-8zM16 29l-4-5h8z" stroke="none"/><rect x="14" y="14" width="4" height="4" stroke="none"/><path d="M7 10a9 9 0 0 0 0 12M25 10a9 9 0 0 1 0 12" fill="none" stroke-width="2"/></svg>
+      </a>
+
+      <section id="heading">
+        <span class="eq" style="left:46%; top:-34px" aria-hidden="true">F = ma</span>
+        <p class="label">PRJ-01 / Technical project</p>
+        <h1 style="font-size:clamp(34px,4.6vw,60px)">Technical project heading</h1>
+        <p class="tagline">One sentence: what this project achieves.</p>
+      </section>
+
+      <section id="information">
+        <p class="label"><b>01</b> Information</p>
+        <div class="card">
+          <dl class="rows">
+            <div><dt>Role</dt><dd>Designer, builder, tester</dd></div>
+            <div><dt>Date</dt><dd>2026</dd></div>
+            <div><dt>Tools</dt><dd>CAD, 3D printing, ESP32, Python</dd></div>
+            <div><dt>Goal</dt><dd>What you wanted to achieve</dd></div>
+            <div><dt>Specs</dt><dd>Mass, dimensions, key parameters</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="photos">
+        <span class="eq" style="right:0; top:-6px" aria-hidden="true">Σmr = R</span>
+        <p class="label"><b>02</b> Photos</p>
+        <div class="photos">
+          <div class="thumb">PHOTO 1
+            <button class="handle" style="--c:var(--green); left:76%; top:16%" data-tip-name="Mass" data-tip-text="of prototype is" data-tip-val="1.20 kg" data-tip-color="#3fb37a" aria-label="Mass of prototype is 1.20 kg"></button>
+          </div>
+          <div class="thumb">PHOTO 2</div>
+          <div class="thumb">PHOTO 3</div>
+          <div class="thumb">CAD VIEW</div>
+        </div>
+      </section>
+
+      <section id="research">
+        <p class="label"><b>03</b> Research</p>
+        <p>Theory, sources, design choices, calculations, sketches.</p>
+        <div class="formula">F = m &middot; a</div>
+        <p>Explain how you got from the requirements to the final design.</p>
+      </section>
+
+      <section id="results">
+        <span class="eq" style="right:0; top:-6px" aria-hidden="true">E = ½mv²</span>
+        <p class="label"><b>04</b> Results</p>
+        <div class="results-grid">
+          <div class="stat"><b>00</b>key number one</div>
+          <div class="stat"><b>00</b>key number two</div>
+          <div class="stat"><b>00</b>key number three</div>
+        </div>
+        <p>What worked, what failed, and what you would change next time.</p>
+        <div class="pager"><a class="btn" href="index.html">&larr; Home</a><a class="btn" href="project-02.html">Next project &rarr;</a></div>
+      </section>
+
+      <p class="foot">&copy; 2026 Yeraly / drawn on paper</p>
+    </main>
+  </div>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

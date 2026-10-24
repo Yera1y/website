@@ -3,15 +3,190 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal portfolio — technical drawings and selected projects.">
-  <title>Technical Paper</title>
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/page-menu.css">
+  <title>Yeraly | Mechanical engineering portfolio</title>
+  <meta name="description" content="Mechanical engineering portfolio of Yeraly Above and beyond.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="drafting-sheet" aria-label="Portfolio home">
-    <div data-include="components/page-menu.html"></div>
-  </main>
-  <script src="js/includes.js"></script>
+<div class="table">
+
+  <!-- LEFT: bookmarks = go to another page, paper lines = jump inside this page -->
+  <nav class="menu" aria-label="Site navigation">
+    <div class="bookmarks">
+      <a href="index.html" class="active" style="--c:var(--green)" data-label="Home" aria-label="Home" aria-current="page"></a>
+      <a href="project-01.html" style="--c:var(--brown)" data-label="Project 01" aria-label="Project 01"></a>
+      <a href="project-02.html" style="--c:var(--purple)" data-label="Project 02" aria-label="Project 02"></a>
+      <a href="project-03.html" style="--c:var(--orange)" data-label="Project 03" aria-label="Project 03"></a>
+      <a href="index.html#contact" style="--c:var(--blue)" data-label="Contact" aria-label="Contact"></a>
+    </div>
+    <div class="paper-wrap">
+      <div class="paper">
+        <ul>
+          <li><a href="#intro" style="--c:var(--green)">Intro</a></li>
+          <li><a href="#projects" style="--c:var(--brown)">Projects <i>3</i></a></li>
+          <li><a href="#contact" style="--c:var(--blue)">Contact</a></li>
+          <li class="blank" aria-hidden="true"></li>
+          <li class="blank" aria-hidden="true"></li>
+        </ul>
+        <svg class="doodle" viewBox="0 0 54 50" fill="none" stroke="#c9a98a" stroke-width="2.5" stroke-linecap="square" aria-hidden="true">
+          <path d="M6 44 C8 26 20 14 34 16 C44 18 46 30 38 34 C32 37 28 30 33 26"/>
+          <path d="M28 8 L40 14 L34 24"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RIGHT: blueprint sheet -->
+  <div class="sheet-wrap">
+    <span class="curl curl-l" aria-hidden="true"></span>
+    <span class="curl curl-r" aria-hidden="true"></span>
+
+    <main class="sheet" id="top">
+
+      <div class="tools" aria-hidden="true">
+        <span><svg viewBox="0 0 16 16"><path d="M1 2h14v2H1zM1 6h9v2H1zM1 10h14v2H1zM1 14h8v2H1z" stroke="none"/></svg></span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><path d="M2 5h11M10 2l3 3-3 3M2 12h11M10 9l3 3-3 3"/></svg></span>
+        <span><svg viewBox="0 0 16 16" stroke="none"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="#8f8872"/></svg></span>
+        <span><svg viewBox="0 0 16 16" stroke-width="2.4" stroke-linecap="square"><path d="M4.5 11.5l7-7"/><circle cx="3.5" cy="12.5" r="2.4" stroke="none"/><circle cx="12.5" cy="3.5" r="2.4" stroke="none"/></svg></span>
+      </div>
+      <a class="compass" href="#top" aria-label="Back to top">
+        <svg viewBox="0 0 32 32" fill="#b3ab92"><path d="M16 3l4 5h-8zM16 29l-4-5h8z" stroke="none"/><rect x="14" y="14" width="4" height="4" stroke="none"/><path d="M7 10a9 9 0 0 0 0 12M25 10a9 9 0 0 1 0 12" fill="none" stroke-width="2"/></svg>
+      </a>
+
+      <section class="hero" id="intro">
+        <span class="eq" style="left:46%; top:-34px" aria-hidden="true">τ = r × F</span>
+        <span class="eq" style="right:2%; bottom:-34px" aria-hidden="true">E = ½mv²</span>
+        <div>
+          <p class="label">Mechanical engineering</p>
+          <h1>Yeraly</h1>
+          <p class="tagline">Above and beyond.</p>
+          <p>Short intro: who you are, what you build, and what you are looking for. Two or three lines is enough.</p>
+          <a class="btn" href="#projects">See projects &darr;</a>
+        </div>
+
+        <!-- Placeholder blueprint. Later replace this <svg> with an export of your own CAD. -->
+        <figure class="figure">
+          <svg viewBox="0 0 200 176" role="img" aria-label="Pixel blueprint of an aircraft with lift and gravity force arrows" shape-rendering="crispEdges" stroke-linejoin="miter">
+            <defs>
+              <pattern id="dith" width="4" height="4" patternUnits="userSpaceOnUse">
+                <rect width="4" height="4" fill="#6f6d68"/><rect width="2" height="2" fill="#8c8a84"/><rect x="2" y="2" width="2" height="2" fill="#8c8a84"/>
+              </pattern>
+              <pattern id="dith2" width="4" height="4" patternUnits="userSpaceOnUse">
+                <rect width="4" height="4" fill="#a3a097"/><rect width="2" height="2" fill="#bab7ad"/><rect x="2" y="2" width="2" height="2" fill="#bab7ad"/>
+              </pattern>
+              <pattern id="glass" width="4" height="4" patternUnits="userSpaceOnUse">
+                <rect width="4" height="4" fill="#efe9d6"/><rect width="2" height="2" fill="#d8d1b8"/><rect x="2" y="2" width="2" height="2" fill="#d8d1b8"/>
+              </pattern>
+            </defs>
+
+            <line x1="100" y1="4" x2="100" y2="172" stroke="#8a846f" stroke-width="1" stroke-dasharray="6 4" opacity=".6"/>
+
+            <!-- tailplane, wings, fuselage -->
+            <rect x="68" y="128" width="64" height="10" fill="url(#dith2)" stroke="#2f2d2a" stroke-width="2"/>
+            <rect x="16" y="64" width="168" height="20" fill="url(#dith2)" stroke="#2f2d2a" stroke-width="2"/>
+            <g stroke="#2f2d2a" stroke-width="1" opacity=".55">
+              <path d="M32 66v16M48 66v16M64 66v16M136 66v16M152 66v16M168 66v16"/>
+            </g>
+            <path d="M92 20H108V28H112V132H108V144H92V132H88V28H92Z" fill="url(#dith)" stroke="#2f2d2a" stroke-width="2"/>
+            <rect x="94" y="34" width="12" height="16" fill="url(#glass)" stroke="#2f2d2a" stroke-width="2"/>
+
+            <!-- rotors -->
+            <g fill="none" stroke="#8fb8cf" stroke-width="2">
+              <circle cx="52" cy="74" r="11"/><circle cx="148" cy="74" r="11"/>
+            </g>
+            <rect x="50" y="72" width="4" height="4" fill="#8fb8cf"/><rect x="146" y="72" width="4" height="4" fill="#8fb8cf"/>
+
+            <!-- lift arrows -->
+            <g class="hot" tabindex="0" role="img" aria-label="Lift force 4.80 N, outer left" data-tip-name="Lift" data-tip-text="force of" data-tip-val="4.80 N" data-tip-color="#8fc3e0">
+              <rect x="26" y="4" width="20" height="66" fill="transparent"/>
+              <path d="M36 62V6" stroke="#8fb8cf" stroke-width="2"/><path d="M30 16L36 6L42 16" fill="none" stroke="#8fb8cf" stroke-width="2"/>
+              <rect class="hh" x="32" y="60" width="8" height="8" fill="#8fb8cf"/>
+            </g>
+            <g class="hot" tabindex="0" role="img" aria-label="Lift force 3.10 N, inner left" data-tip-name="Lift" data-tip-text="force of" data-tip-val="3.10 N" data-tip-color="#8fc3e0">
+              <rect x="58" y="24" width="20" height="46" fill="transparent"/>
+              <path d="M68 62V26" stroke="#8fb8cf" stroke-width="2"/><path d="M62 36L68 26L74 36" fill="none" stroke="#8fb8cf" stroke-width="2"/>
+              <rect class="hh" x="64" y="60" width="8" height="8" fill="#8fb8cf"/>
+            </g>
+            <g class="hot" tabindex="0" role="img" aria-label="Lift force 3.10 N, inner right" data-tip-name="Lift" data-tip-text="force of" data-tip-val="3.10 N" data-tip-color="#8fc3e0">
+              <rect x="122" y="24" width="20" height="46" fill="transparent"/>
+              <path d="M132 62V26" stroke="#8fb8cf" stroke-width="2"/><path d="M126 36L132 26L138 36" fill="none" stroke="#8fb8cf" stroke-width="2"/>
+              <rect class="hh" x="128" y="60" width="8" height="8" fill="#8fb8cf"/>
+            </g>
+            <g class="hot" tabindex="0" role="img" aria-label="Lift force 4.80 N, outer right" data-tip-name="Lift" data-tip-text="force of" data-tip-val="4.80 N" data-tip-color="#8fc3e0">
+              <rect x="154" y="4" width="20" height="66" fill="transparent"/>
+              <path d="M164 62V6" stroke="#8fb8cf" stroke-width="2"/><path d="M158 16L164 6L170 16" fill="none" stroke="#8fb8cf" stroke-width="2"/>
+              <rect class="hh" x="160" y="60" width="8" height="8" fill="#8fb8cf"/>
+            </g>
+
+            <!-- gravity arrow -->
+            <g class="hot g" tabindex="0" role="img" aria-label="Gravity force 5.50 N" data-tip-name="Gravity" data-tip-text="force of" data-tip-val="5.50 N" data-tip-color="#3fb37a">
+              <rect x="90" y="70" width="20" height="96" fill="transparent"/>
+              <path d="M100 78V164" stroke="#1d6b46" stroke-width="2"/><path d="M94 154L100 164L106 154" fill="none" stroke="#1d6b46" stroke-width="2"/>
+              <rect class="hh" x="96" y="74" width="8" height="8" fill="#1d6b46"/>
+            </g>
+          </svg>
+          <figcaption>Fig. 01 / placeholder, hover the arrows</figcaption>
+        </figure>
+      </section>
+
+      <section id="projects">
+        <span class="eq" style="right:0; top:-6px" aria-hidden="true">L = r × p = Iω</span>
+        <p class="label"><b>01</b> Projects</p>
+        <h2 class="title">Selected work</h2>
+
+        <div class="stack">
+          <a class="project" href="project-01.html" style="--c:var(--brown)">
+            <div class="thumb">PHOTO / CAD</div>
+            <div class="meta">
+              <span class="code">PRJ-01</span>
+              <h3>Project name one</h3>
+              <p>One or two lines: what it is and which problem it solves.</p>
+              <div class="tags"><span>CAD</span><span>3D printing</span><span>ESP32</span></div>
+              <span class="open">Open &rarr;</span>
+            </div>
+          </a>
+
+          <a class="project" href="project-02.html" style="--c:var(--purple)">
+            <div class="thumb">PHOTO / CAD</div>
+            <div class="meta">
+              <span class="code">PRJ-02</span>
+              <h3>Project name two</h3>
+              <p>One or two lines: what it is and which problem it solves.</p>
+              <div class="tags"><span>Analysis</span><span>Testing</span></div>
+              <span class="open">Open &rarr;</span>
+            </div>
+          </a>
+
+          <a class="project" href="project-03.html" style="--c:var(--orange)">
+            <div class="thumb">PHOTO / CAD</div>
+            <div class="meta">
+              <span class="code">PRJ-03</span>
+              <h3>Project name three</h3>
+              <p>One or two lines: what it is and which problem it solves.</p>
+              <div class="tags"><span>Design</span><span>Prototype</span></div>
+              <span class="open">Open &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact">
+        <span class="eq" style="right:0; top:-6px" aria-hidden="true">F = ma</span>
+        <p class="label"><b>02</b> Contact</p>
+        <div class="card">
+          <p class="intro">Open to internships, research and projects.</p>
+          <dl class="rows">
+            <div><dt>Email</dt><dd><a href="mailto:you@example.com">you@example.com</a></dd></div>
+            <div><dt>GitHub</dt><dd><a href="#">github.com/you</a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="#">linkedin.com/in/you</a></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <p class="foot">&copy; 2026 Yeraly / drawn on paper</p>
+    </main>
+  </div>
+</div>
+<script src="site.js"></script>
 </body>
 </html>
