@@ -37,16 +37,64 @@ Visitors should understand:
 
 ```text
 /
-├── Home
-├── About
-├── Projects
-│   ├── Project 01
-│   ├── Project 02
-│   └── Project 03
-├── Research
-├── Resume
-└── Contact
+├── index.html                  Home / notebook entry point
+├── projects/
+│   ├── project-01.html        Project page 01
+│   ├── project-02.html        Project page 02
+│   └── project-03.html        Project page 03
+├── components/
+│   └── page-menu.html          Shared paper-list menu
+├── css/
+│   ├── site.css                Shared paper background
+│   ├── page-menu.css            Shared paper-list menu
+│   └── project-page.css         Project page layout
+├── js/
+│   └── includes.js             Loads shared components
+└── assets/
+    ├── reference/              Reference screenshots and visual studies
+    ├── images/                 Portfolio project images
+    └── icons/                  Small interface icons
 ```
+
+The visible site can present these as:
+
+```text
+Main · Project 1 · Project 2 · Project 3 · Contact
+```
+
+The three project pages are the first required project detail pages. More can be added later without changing the shared layout.
+
+### Important note about shared HTML
+
+Your idea is correct in principle: shared footer and navigation markup should be defined once and reused everywhere. However, browser HTML does not support a native include such as:
+
+```html
+<include src="footer.html"></include>
+```
+
+For this static website, the recommended first implementation is:
+
+1. Put reusable markup in `components/footer.html`, `components/header.html`, and `components/page-menu.html`.
+2. Add a small `js/includes.js` file to load those files into elements such as `<div data-include="components/footer.html"></div>`.
+3. Use the same placeholder on the homepage and all three project pages.
+
+This keeps the pages consistent without copying footer code. It requires the website to be opened through a local web server because browser security can block `fetch()` when opening files directly with `file://`. A static-site generator can replace this approach later if the project grows.
+
+### Notebook menu
+
+The left side of every page should contain a compact paper-list menu inspired by the reference image:
+
+- A cream, slightly irregular paper card.
+- Small folded or tab-like edges.
+- A numbered heading.
+- Stacked entries separated by hand-drawn horizontal rules.
+- Different muted colors for different sections.
+- The current page visibly highlighted.
+- A small pencil/scribble detail near the bottom.
+
+The menu is always visible on desktop rather than opening as a large overlay. On narrow screens it can move above the page content. Adding a new destination should require adding one entry to the shared `components/page-menu.html` file.
+
+The menu should be shared through `components/page-menu.html` so it appears identically on the homepage and all three project pages.
 
 ### Recommended first version
 
@@ -1019,12 +1067,15 @@ The first complete project page should define the structure for the remaining pr
 ### Phase 4 — First implementation
 
 - [ ] Build the responsive page layout.
-- [ ] Build the homepage.
+- [ ] Build the notebook-style homepage.
+- [ ] Build the reusable left-side page menu.
 - [ ] Build project cards.
 - [ ] Build the project detail template.
 - [ ] Build the About page.
 - [ ] Build the Contact page.
 - [ ] Add basic navigation.
+- [ ] Add shared header and footer partials.
+- [ ] Add the shared-partial loader.
 
 ### Phase 5 — Quality improvements
 
@@ -1050,7 +1101,54 @@ The first complete project page should define the structure for the remaining pr
 
 ---
 
-## 11. Recommended First Release
+## 11. Shared Layout Implementation
+
+### Planned reusable files
+
+| File | Responsibility |
+|---|---|
+| `components/header.html` | Shared page header and branding |
+| `components/page-menu.html` | Left-side paper menu and page links |
+| `components/footer.html` | Shared contact and copyright footer |
+| `js/includes.js` | Loads and inserts shared components |
+| `css/site.css` | Shared paper texture, pixel styling, and responsive rules |
+| `css/page-menu.css` | Shared paper-list menu |
+| `css/project-page.css` | Project page content layout |
+
+### Page markup pattern
+
+Each page should include placeholders rather than duplicate shared markup:
+
+```html
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/page-menu.css">
+
+<main>
+  <div data-include="components/page-menu.html"></div>
+  <!-- Page-specific content -->
+</main>
+
+<div data-include="components/footer.html"></div>
+<script src="js/includes.js"></script>
+```
+
+`components/page-menu.html` is the only file containing the paper-list menu markup. The page itself only contains the `data-include` placeholder. To add the menu to another root-level page, copy the placeholder and the stylesheet/script references. Pages inside a subdirectory should use paths such as `../components/page-menu.html`, `../css/site.css`, `../css/page-menu.css`, and `../js/includes.js`.
+
+The shared loader automatically marks the link matching the current filename with `aria-current="page"` and the visual `active` state.
+
+### Local development requirement
+
+Because the loader uses `fetch()`, pages should be previewed through a local server, for example:
+
+```text
+http://localhost:8000/index.html
+```
+
+Opening the files directly with `file://` may prevent the browser from loading the partial files. This is a browser security restriction, not a problem with the page structure.
+
+---
+
+## 12. Recommended First Release
 
 ```text
 Visual style: Light blueprint / technical notebook
@@ -1065,7 +1163,7 @@ The most valuable part of the website will be the quality of the project pages. 
 
 ---
 
-## 12. Research Summary
+## 13. Research Summary
 
 Current portfolio conventions generally emphasize:
 
@@ -1087,7 +1185,7 @@ Useful references:
 
 ---
 
-## 13. Final Decisions Needed Before Coding
+## 14. Final Decisions Needed Before Coding
 
 The following choices should be confirmed before implementation:
 
