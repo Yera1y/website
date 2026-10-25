@@ -1,6 +1,6 @@
 # website
 
-Personal engineering portfolio of **JustCreate**, styled like a *contraption diagram* from Create Aeronautics: a paper menu and a big blueprint sheet lying on a table.
+Personal engineering portfolio, styled like a *contraption diagram* from Create Aeronautics: a paper menu and a big blueprint sheet lying on a table.
 
 > *Above and beyond.*
 
@@ -30,14 +30,14 @@ kept separate from the site's own preview image.
 |---|---|
 | Domain | [just-create.tech](https://just-create.tech) |
 | Nickname | JustCreate |
-| Full name | placeholder |
+| Full name | Yeraly |
 | Email | Email@gmail.com |
 | GitHub | [github.com/Yera1y](https://github.com/Yera1y) |
 | Quote | Above and beyond |
 
 ## Concept
 
-- The page is a **table** (neutral stone background) with two sheets on it.
+- The page is a **table** (deep blue background) with two sheets on it.
 - **Left:** a stack of paper sheets with straight, pixel-stepped edges. The top sheet is the menu. The sheets under it change count and tint on every page, and the top sheet is dealt in with a short animation when you change page.
 - **Right:** a big blueprint sheet with a grid, tick marks, rolled edges and small margin formulas.
 - Force arrows and hover tooltips (like "Gravity force of 5.50 N") connect the diagram idea to the content. The three project blocks hang on one green arrow, like parts of a contraption.
