@@ -58,3 +58,32 @@
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) mark(last);
   }, { passive: true });
 })();
+
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* first tool button: show / hide the menu, remembered between pages */
+  var btn = document.querySelector('.tool-menu');
+  function setMenu(on, save) {
+    root.classList.toggle('menu-off', !on);
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (save) { try { localStorage.setItem('menu', on ? 'on' : 'off'); } catch (e) {} }
+  }
+  setMenu(!root.classList.contains('menu-off'), false);
+  if (btn) btn.addEventListener('click', function () { setMenu(root.classList.contains('menu-off'), true); });
+
+  /* page change: clear the top sheet before the next page deals its own sheet in */
+  function norm(p) { return p.replace(/index\.html$/, ''); }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || reduce) return;
+    var u = new URL(a.href, location.href);
+    if (u.protocol !== location.protocol || u.host !== location.host) return;
+    if (norm(u.pathname) === norm(location.pathname)) return;
+    e.preventDefault();
+    root.classList.add('leaving');
+    setTimeout(function () { location.href = a.href; }, 300);
+  });
+  window.addEventListener('pageshow', function (e) { if (e.persisted) root.classList.remove('leaving'); });
+})();

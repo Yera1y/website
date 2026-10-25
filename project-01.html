@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PRJ-01 | Yeraly</title>
   <link rel="stylesheet" href="style.css">
+  <script>try{if(localStorage.getItem('menu')==='off')document.documentElement.classList.add('menu-off')}catch(e){}</script>
 </head>
 <body>
 <div class="table">
 
   <!-- LEFT: bookmarks = go to another page, paper lines = jump inside this page -->
-  <nav class="menu" aria-label="Site navigation">
+  <nav class="menu" id="site-menu" aria-label="Site navigation">
     <div class="bookmarks">
       <a href="index.html" style="--c:var(--green)" data-label="Home" aria-label="Home"></a>
       <a href="project-01.html" class="active" style="--c:var(--brown)" data-label="Project 01" aria-label="Project 01" aria-current="page"></a>
@@ -18,7 +19,10 @@
       <a href="project-03.html" style="--c:var(--orange)" data-label="Project 03" aria-label="Project 03"></a>
       <a href="index.html#contact" style="--c:var(--blue)" data-label="Contact" aria-label="Contact"></a>
     </div>
-    <div class="paper-wrap">
+    <div class="paper-wrap s-project" style="--page:var(--brown)">
+      <i class="under u3" aria-hidden="true"></i>
+      <i class="under u2" aria-hidden="true"></i>
+      <i class="under u1" aria-hidden="true"></i>
       <div class="paper">
         <ul>
           <li><a href="#heading" style="--c:var(--green)">Heading</a></li>
@@ -28,10 +32,7 @@
           <li><a href="#results" style="--c:var(--red)">Results</a></li>
           <li class="blank" aria-hidden="true"></li>
         </ul>
-        <svg class="doodle" viewBox="0 0 54 50" fill="none" stroke="#c9a98a" stroke-width="2.5" stroke-linecap="square" aria-hidden="true">
-          <path d="M6 44 C8 26 20 14 34 16 C44 18 46 30 38 34 C32 37 28 30 33 26"/>
-          <path d="M28 8 L40 14 L34 24"/>
-        </svg>
+        <svg class="doodle" viewBox="0 0 12 12" aria-hidden="true"><path d="M9 0h2v1h-2zM8 1h4v1h-4zM8 2h4v1h-4zM8 3h3v1h-3zM7 4h2v1h-2zM6 5h2v1h-2zM5 6h2v1h-2zM4 7h2v1h-2zM1 8h4v1h-4zM0 9h4v1h-4zM0 10h4v1h-4zM1 11h2v1h-2z"/></svg>
       </div>
     </div>
   </nav>
@@ -43,11 +44,11 @@
 
     <main class="sheet" id="top">
 
-      <div class="tools" aria-hidden="true">
-        <span><svg viewBox="0 0 16 16"><path d="M1 2h14v2H1zM1 6h9v2H1zM1 10h14v2H1zM1 14h8v2H1z" stroke="none"/></svg></span>
-        <span><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><path d="M2 5h11M10 2l3 3-3 3M2 12h11M10 9l3 3-3 3"/></svg></span>
-        <span><svg viewBox="0 0 16 16" stroke="none"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="#8f8872"/></svg></span>
-        <span><svg viewBox="0 0 16 16" stroke-width="2.4" stroke-linecap="square"><path d="M4.5 11.5l7-7"/><circle cx="3.5" cy="12.5" r="2.4" stroke="none"/><circle cx="12.5" cy="3.5" r="2.4" stroke="none"/></svg></span>
+      <div class="tools">
+        <button class="tool tool-menu" type="button" aria-label="Show or hide the menu" aria-pressed="true" aria-controls="site-menu" data-tip-name="Menu" data-tip-text="" data-tip-val="show / hide"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1h10v1h-10zM1 4h8v1h-8zM1 7h10v1h-10zM1 10h5v1h-5z"/></svg></button>
+        <span class="tool" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M8 0h1v1h-1zM9 1h1v1h-1zM1 2h10v1h-10zM9 3h1v1h-1zM8 4h1v1h-1zM8 7h1v1h-1zM9 8h1v1h-1zM1 9h10v1h-10zM9 10h1v1h-1zM8 11h1v1h-1z"/></svg></span>
+        <span class="tool" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h2v1h-2zM6 1h4v1h-4zM6 2h5v1h-5zM6 3h6v1h-6zM6 4h6v1h-6zM6 5h6v1h-6zM0 6h6v1h-6zM0 7h6v1h-6zM0 8h6v1h-6zM1 9h5v1h-5zM2 10h4v1h-4zM4 11h2v1h-2z"/><path class="dk" d="M4 0h2v1h-2zM2 1h4v1h-4zM1 2h5v1h-5zM0 3h6v1h-6zM0 4h6v1h-6zM0 5h6v1h-6zM6 6h6v1h-6zM6 7h6v1h-6zM6 8h6v1h-6zM6 9h5v1h-5zM6 10h4v1h-4zM6 11h2v1h-2z"/></svg></span>
+        <span class="tool" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M9 0h2v1h-2zM8 1h4v1h-4zM8 2h4v1h-4zM8 3h3v1h-3zM7 4h2v1h-2zM6 5h2v1h-2zM5 6h2v1h-2zM4 7h2v1h-2zM1 8h4v1h-4zM0 9h4v1h-4zM0 10h4v1h-4zM1 11h2v1h-2z"/></svg></span>
       </div>
       <a class="compass" href="#top" aria-label="Back to top">
         <svg viewBox="0 0 32 32" fill="#b3ab92"><path d="M16 3l4 5h-8zM16 29l-4-5h8z" stroke="none"/><rect x="14" y="14" width="4" height="4" stroke="none"/><path d="M7 10a9 9 0 0 0 0 12M25 10a9 9 0 0 1 0 12" fill="none" stroke-width="2"/></svg>
