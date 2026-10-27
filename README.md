@@ -2,7 +2,7 @@
 
 Personal engineering portfolio, styled like a *contraption diagram* from Create Aeronautics: a paper menu and a big blueprint sheet lying on a table.
 
-> *Above and beyond.*
+> *[just-create.tech](https://just-create.tech)*
 
 ## Screenshots and references
 
@@ -14,11 +14,11 @@ Personal engineering portfolio, styled like a *contraption diagram* from Create 
 
 | Contraption diagram | Contraption diagram: weight |
 |---|---|
-| ![Contraption diagram](assets/reference/contraption%20diagram.png) | ![Contraption diagram weight](assets/reference/Contraption_Diagram_Weight_.webp) |
+| ![Contraption diagram](assets/reference/contraption%20diagram.png) | ![Empty Contraption diagram](assets/reference/2026-10-27_10.43.30.png) |
 
 | Contraption diagram 2 | Airship and balloon schematics |
 |---|---|
-| ![Contraption diagram 2](assets/reference/contraption%20diagram2.webp) | ![Airship and balloon schematics](assets/reference/airship-and-balloon-schematics-v0-47vjwku15vwg1.webp) |
+| ![Note toggled Contraption diagram](assets/reference/2026-10-27_10.43.39.png) | ![Airship and balloon schematics](assets/reference/airship-and-balloon-schematics-v0-47vjwku15vwg1.webp) |
 
 The reference images document the visual direction for the paper menu, colored tabs,
 blueprint layout, force diagrams, and handwritten technical annotations. They are
@@ -33,7 +33,6 @@ kept separate from the site's own preview image.
 | Full name | Yeraly |
 | Email | Yeraly.Salybayev@gmail.com |
 | GitHub | [github.com/Yera1y](https://github.com/Yera1y) |
-| Quote | Above and beyond |
 
 ## Concept
 
@@ -80,16 +79,57 @@ Paper lines: Heading, Information, Photos, Research, Results. Same paper menu an
 
 ```
 website/
-├── index.html          homepage
-├── project-01.html     project page template (02 and 03 are copies)
-├── project-02.html
-├── project-03.html
+├── content/            the text of every page, one JSON file per page
+│   ├── home.json
+│   └── project-01.json (02, 03, ...)
+├── templates/          the markup: base.html (shared shell), home.html, project.html
+├── build.py            generates the .html files below (Python 3, no installs)
+├── index.html          GENERATED homepage
+├── project-01.html     GENERATED project pages (02, 03, ... same way)
 ├── style.css           all styling
 ├── site.js             tooltips, current-section highlight, menu toggle, page-change animation
 ├── fonts/              self-hosted fonts (no Google Fonts, works in China)
+├── assets/project-01/  photos for each project (02, 03, ...)
 ├── assets/reference/   visual reference images
 └── docs/preview.png   homepage screenshot for this README
 ```
+
+## Adding and editing content
+
+The `.html` files in the root are generated. Edit `content/*.json` and `templates/*.html`, then run `build.py`. Do not edit the generated files by hand, because the next build overwrites them.
+
+**Add a project**
+
+```
+python build.py new "My new project"   # creates content/project-04.json and assets/project-04/
+```
+
+1. Fill in `content/project-04.json` and put photos in `assets/project-04/`.
+2. Optional: `python build.py images` converts photos to WebP at most 1600 px wide (needs `pip install pillow`).
+3. Set `"draft": false`, run `python build.py`, then `git add . && git commit && git push`. Cloudflare redeploys by itself.
+
+If anything is wrong (missing field, missing image, bad JSON) the build stops with the file and field name and writes nothing.
+
+**Project JSON fields**
+
+| Field | Notes |
+|-------|-------|
+| `title`, `summary` | required. `summary` is the text on the home-page card |
+| `cardTitle` | optional name for the home-page card (defaults to `title`) |
+| `tagline`, `kind`, `tags`, `color` | optional. `color` is green, brown, purple, orange, blue or red |
+| `cover` | optional image for the home-page card, e.g. `assets/project-04/cover.webp` |
+| `info` | list of `{label, value}` rows |
+| `photos` | list of `{src, alt}`; optional `handle` adds a hover tooltip arrow (`name, text, value, color, x, y`) |
+| `research` | list of blocks: `{type: "text"}`, `{type: "formula"}`, `{type: "image", src, alt}` |
+| `results` | `{stats: [{value, label}], text}` |
+| `equations` | optional: change or hide (`""`) the small margin formulas |
+| `draft` | `true` keeps the project off the site |
+
+Empty sections (no `info`, no `photos`, ...) are skipped, and their line disappears from the paper menu.
+
+**Change the layout of every page:** edit `templates/base.html` (menu, bookmarks, tool buttons, shell). Edit `templates/project.html` or `templates/home.html` for the content area of those pages. Colors and spacing stay in `style.css`.
+
+`python build.py --check` tells you whether the generated files are out of date.
 
 ## Credits
 
