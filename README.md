@@ -31,7 +31,7 @@ kept separate from the site's own preview image.
 | Domain | [just-create.tech](https://just-create.tech) |
 | Nickname | JustCreate |
 | Full name | Yeraly |
-| Email | Email@gmail.com |
+| Email | Yeraly.Salybayev@gmail.com |
 | GitHub | [github.com/Yera1y](https://github.com/Yera1y) |
 | Quote | Above and beyond |
 
