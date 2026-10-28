@@ -1,0 +1,76 @@
+<section id="heading">
+{{#if eq_heading}}
+  <span class="eq" style="left:46%; top:-34px" aria-hidden="true">{{eq_heading}}</span>
+{{/if}}
+  <p class="label">{{code}} / {{kind}}</p>
+  <h1 style="font-size:clamp(34px,4.6vw,60px)">{{title}}</h1>
+  <p class="tagline">{{tagline}}</p>
+</section>
+{{#if info}}
+
+<section id="information">
+  <p class="label"><b>{{n_info}}</b> Information</p>
+  <div class="card">
+    <dl class="rows">
+{{#each info}}
+      <div><dt>{{label}}</dt><dd>{{value}}</dd></div>
+{{/each}}
+    </dl>
+  </div>
+</section>
+{{/if}}
+{{#if photos}}
+
+<section id="photos">
+{{#if eq_photos}}
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">{{eq_photos}}</span>
+{{/if}}
+  <p class="label"><b>{{n_photos}}</b> Photos</p>
+  <div class="photos">
+{{#each photos}}
+    <div class="thumb">{{#if src}}<img src="{{src}}" alt="{{alt}}" loading="lazy">{{/if}}{{#if placeholder}}{{placeholder}}{{/if}}
+{{#if handle}}
+      <button class="handle" style="--c:var(--{{handle.color}}); left:{{handle.x}}; top:{{handle.y}}" data-tip-name="{{handle.name}}" data-tip-text="{{handle.text}}" data-tip-val="{{handle.value}}" data-tip-color="{{handle.tip_color}}" aria-label="{{handle.aria}}"></button>
+{{/if}}
+    </div>
+{{/each}}
+  </div>
+</section>
+{{/if}}
+{{#if research}}
+
+<section id="research">
+  <p class="label"><b>{{n_research}}</b> Research</p>
+{{#each research}}
+{{#if is_text}}
+  <p>{{text}}</p>
+{{/if}}
+{{#if is_formula}}
+  <div class="formula">{{text}}</div>
+{{/if}}
+{{#if is_image}}
+  <div class="photos"><div class="thumb"><img src="{{src}}" alt="{{alt}}" loading="lazy"></div></div>
+{{/if}}
+{{/each}}
+</section>
+{{/if}}
+
+<section id="results">
+{{#if results}}
+{{#if eq_results}}
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">{{eq_results}}</span>
+{{/if}}
+  <p class="label"><b>{{n_results}}</b> Results</p>
+{{#if results.stats}}
+  <div class="results-grid">
+{{#each results.stats}}
+    <div class="stat"><b>{{value}}</b>{{label}}</div>
+{{/each}}
+  </div>
+{{/if}}
+{{#if results.text}}
+  <p>{{results.text}}</p>
+{{/if}}
+{{/if}}
+  <div class="pager"><a class="btn" href="index.html">&larr; Home</a><a class="btn" href="{{next_href}}">{{next_label}} &rarr;</a></div>
+</section>

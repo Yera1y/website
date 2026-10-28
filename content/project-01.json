@@ -1,0 +1,44 @@
+{
+  "draft": false,
+  "color": "brown",
+  "kind": "Technical project",
+  "title": "Abobus",
+  "cardTitle": "Project name one",
+  "tagline": "The devourer of galactic.",
+  "summary": "It exists in the void.",
+  "tags": ["CAD", "3D printing", "ESP32"],
+
+  "info": [
+    { "label": "Role", "value": "wdwdw, builder, tester" },
+    { "label": "Date", "value": "2026" },
+    { "label": "Tools", "value": "CAD, 3D printing, ESP32, Python" },
+    { "label": "Goal", "value": "What you wanted to achieve" },
+    { "label": "Specs", "value": "Mass, dimensions, key parameters" }
+  ],
+
+  "photos": [
+    {
+      "src": "assets/project-01/test.jpg",
+      "alt": "Prototype on the workbench",
+      "handle": { "name": "Mass", "text": "of prototype is", "value": "100 kg", "color": "green", "x": "50%", "y": "70%" }
+    },
+    { "placeholder": "PHOTO 2" },
+    { "placeholder": "PHOTO 3" },
+    { "placeholder": "CAD VIEW" }
+  ],
+
+  "research": [
+    { "type": "text", "text": "Theory, sources, design choices, calculations, sketches." },
+    { "type": "formula", "text": "F = m · a" },
+    { "type": "text", "text": "Explain how you got from the requirements to the final design." }
+  ],
+
+  "results": {
+    "stats": [
+      { "value": "00", "label": "key number one" },
+      { "value": "00", "label": "key number two" },
+      { "value": "00", "label": "key number three" }
+    ],
+    "text": "What worked, what failed, and what you would change next time."
+  }
+}

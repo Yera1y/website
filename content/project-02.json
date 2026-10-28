@@ -1,0 +1,43 @@
+{
+  "draft": false,
+  "color": "purple",
+  "kind": "Technical project",
+  "title": "Technical project heading",
+  "cardTitle": "Project name two",
+  "tagline": "One sentence: what this project achieves.",
+  "summary": "One or two lines: what it is and which problem it solves.",
+  "tags": ["Analysis", "Testing"],
+
+  "info": [
+    { "label": "Role", "value": "Designer, builder, tester" },
+    { "label": "Date", "value": "2026" },
+    { "label": "Tools", "value": "CAD, 3D printing, ESP32, Python" },
+    { "label": "Goal", "value": "What you wanted to achieve" },
+    { "label": "Specs", "value": "Mass, dimensions, key parameters" }
+  ],
+
+  "photos": [
+    {
+      "placeholder": "PHOTO 1",
+      "handle": { "name": "Mass", "text": "of prototype is", "value": "1.20 kg", "color": "green", "x": "76%", "y": "16%" }
+    },
+    { "placeholder": "PHOTO 2" },
+    { "placeholder": "PHOTO 3" },
+    { "placeholder": "CAD VIEW" }
+  ],
+
+  "research": [
+    { "type": "text", "text": "Theory, sources, design choices, calculations, sketches." },
+    { "type": "formula", "text": "F = m · a" },
+    { "type": "text", "text": "Explain how you got from the requirements to the final design." }
+  ],
+
+  "results": {
+    "stats": [
+      { "value": "00", "label": "key number one" },
+      { "value": "00", "label": "key number two" },
+      { "value": "00", "label": "key number three" }
+    ],
+    "text": "What worked, what failed, and what you would change next time."
+  }
+}
