@@ -3,7 +3,7 @@
   "color": "brown",
   "kind": "Technical project",
   "title": "Abobus",
-  "cardTitle": "Project name one",
+  "cardTitle": "Abobus",
   "tagline": "The devourer of galactic.",
   "summary": "It exists in the void.",
   "tags": ["CAD", "3D printing", "ESP32"],
@@ -11,7 +11,7 @@
   "info": [
     { "label": "Role", "value": "wdwdw, builder, tester" },
     { "label": "Date", "value": "2026" },
-    { "label": "Tools", "value": "CAD, 3D printing, ESP32, Python" },
+    { "label": "Tools", "value": "Feed, the, cat" },
     { "label": "Goal", "value": "What you wanted to achieve" },
     { "label": "Specs", "value": "Mass, dimensions, key parameters" }
   ],
@@ -19,13 +19,15 @@
   "photos": [
     {
       "src": "assets/project-01/test.jpg",
-      "alt": "Prototype on the workbench",
+      "alt": "Prototype",
       "handle": { "name": "Mass", "text": "of prototype is", "value": "100 kg", "color": "green", "x": "50%", "y": "70%" }
     },
     { "placeholder": "PHOTO 2" },
     { "placeholder": "PHOTO 3" },
     { "placeholder": "CAD VIEW" }
   ],
+  "cover": "assets/project-01/cover.jpg",
+  "coverAlt": "Prototype on the workbench",
 
   "research": [
     { "type": "text", "text": "Theory, sources, design choices, calculations, sketches." },

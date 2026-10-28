@@ -41,12 +41,12 @@ kept separate from the site's own preview image.
 - **Right:** a big blueprint sheet with a grid, tick marks, rolled edges and small margin formulas.
 - Force arrows and hover tooltips (like "Gravity force of 5.50 N") connect the diagram idea to the content. The three project blocks hang on one green arrow, like parts of a contraption.
 
-### Navigation (two layers)
+### Navigation
 
 | Element | What it does |
 |---|---|
 | Colored bookmarks (behind the paper) | Go to another **page**. The bookmark of the current page is tucked inward and made shorter. |
-| Text lines on the paper | Jump to a **section of the current page**. The line for the section in view is highlighted. |
+| Text lines on the paper | Jump to a **section on current page**. The line for the section in view is highlighted. |
 | First tool button (top-left of the blueprint sheet) | **Shows or hides the whole menu**, for a full-width page. The choice is remembered between pages. |
 
 Bookmarks: Home (green), Project 01 (brown), Project 02 (purple), Project 03 (orange), Contact (blue).
@@ -85,7 +85,7 @@ website/
 ├── templates/          the markup: base.html (shared shell), home.html, project.html
 ├── build.py            generates the .html files below (Python 3, no installs)
 ├── index.html          GENERATED homepage
-├── project-01.html     GENERATED project pages (02, 03, ... same way)
+├── project-01.html     GENERATED project pages (02, 03, ...)
 ├── style.css           all styling
 ├── site.js             tooltips, current-section highlight, menu toggle, page-change animation
 ├── fonts/              self-hosted fonts (no Google Fonts, works in China)
