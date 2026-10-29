@@ -1,0 +1,338 @@
+:root {
+  --green: #1d6b46;
+  --brown: #7a4a2a;
+  --purple: #6b3a8a;
+  --orange: #d4552a;
+  --blue: #4a79a8;
+  --red: #c0392b;
+  --paper: #f2ebd5;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #e7e1cf;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--purple);
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 900px);
+  gap: 24px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.menu {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  padding: 16px;
+  background: var(--paper);
+}
+
+.bookmarks {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.bookmarks a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: var(--c, var(--blue));
+}
+
+.bookmarks a.active {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.paper {
+  padding: 16px;
+  background: #fff;
+}
+
+.paper ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.paper li {
+  margin: 6px 0;
+}
+
+.paper li.blank {
+  height: 12px;
+  list-style: none;
+}
+
+.paper a.current {
+  font-weight: bold;
+}
+
+.sheet-wrap {
+  min-width: 0;
+}
+
+.sheet {
+  position: relative;
+  min-height: 100vh;
+  padding: 56px 48px 32px;
+  background: #fff;
+}
+
+.tools {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.tool {
+  display: block;
+}
+
+.tool-menu {
+  padding: 4px 8px;
+  border: 1px solid #777;
+  background: #fff;
+  cursor: pointer;
+}
+
+.tool svg {
+  width: 16px;
+  height: 16px;
+}
+
+.compass {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.compass svg {
+  width: 28px;
+  height: 28px;
+}
+
+section {
+  margin-bottom: 64px;
+  scroll-margin-top: 24px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(36px, 7vw, 72px);
+}
+
+h2 {
+  margin-top: 8px;
+}
+
+.label,
+.code {
+  color: var(--green);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 12px;
+  color: #fff;
+  background: var(--green);
+  text-decoration: none;
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  padding: 16px;
+  color: inherit;
+  border: 1px solid #aaa;
+  text-decoration: none;
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  padding: 8px;
+  color: #555;
+  background: #eee;
+  text-align: center;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project h3 {
+  margin: 6px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags span {
+  padding: 2px 6px;
+  background: #e8e8e8;
+  font-size: 0.85rem;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #aaa;
+}
+
+.rows {
+  margin: 0;
+}
+
+.rows > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.rows > div:last-child {
+  border-bottom: 0;
+}
+
+.rows dt {
+  font-weight: bold;
+}
+
+.rows dd {
+  margin: 0;
+}
+
+.photos,
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.formula,
+.stat {
+  padding: 16px;
+  background: #eee;
+}
+
+.stat b {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.handle {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--c, var(--green));
+}
+
+.tip {
+  display: none;
+}
+
+.tip.on {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  padding: 6px 8px;
+  color: #fff;
+  background: #222;
+}
+
+.foot {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.menu-off .menu {
+  display: none;
+}
+
+.menu-off .table {
+  grid-template-columns: minmax(0, 900px);
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .table {
+    display: block;
+    padding: 12px;
+  }
+
+  .menu {
+    position: static;
+    margin-bottom: 12px;
+  }
+
+  .sheet {
+    padding: 56px 20px 24px;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .photos,
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rows > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
