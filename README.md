@@ -8,7 +8,7 @@ Personal engineering portfolio, styled like a *contraption diagram* from Create 
 
 ### Homepage
 
-![Homepage preview](docs/preview.png)
+![Homepage preview](assets/docs/preview.png)
 
 ### Visual references: captured in game
 
@@ -47,7 +47,7 @@ website/
 ├── project-01.html     GENERATED project pages (02, 03, ...)
 ├── style.css           all styling
 ├── site.js             tooltips, current-section highlight, menu toggle, page-change animation
-├── fonts/              self-hosted fonts (no Google Fonts, works in China)
+├── fonts/              self-hosted fonts
 ├── assets/project-01/  photos for each project (02, 03, ...)
 ├── assets/reference/   visual reference images
 └── docs/preview.png   homepage screenshot for this README

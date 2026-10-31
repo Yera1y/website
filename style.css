@@ -756,3 +756,73 @@ h2.title {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+
+
+
+
+
+.repo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 20px 16px 16px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(250,246,230,.78);
+  border: 2px solid var(--line);
+  box-shadow: 5px 5px 0 rgba(60,50,30,.2);
+  transition: transform .1s steps(2), box-shadow .1s steps(2), border-color .1s;
+}
+.repo:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 rgba(60,50,30,.26);
+  border-color: var(--blue);
+}
+.repo:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(60,50,30,.26);
+}
+.repo-icon {
+  display: grid;
+  place-items: center;
+  height: 72px;
+  color: var(--paper);
+  background: repeating-conic-gradient(#8a8882 0 25%, #6f6d68 0 50%) 0 0 / 4px 4px;
+  border: 2px solid #2f2d2a;
+}
+.repo-icon svg {
+  width: 66px;
+  height: 36px;
+  fill: currentColor;
+  shape-rendering: crispEdges;
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,.5));
+}
+.repo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.repo .code {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .16em;
+  color: var(--muted);
+}
+.repo strong {
+  font: 400 35px/1.1 var(--pixel);
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+.repo .desc { font-size: 14px; }
+.repo .open {
+  align-self: center;
+  white-space: nowrap;
+  color: var(--blue);
+}
+@media (max-width: 640px) {
+  .repo { grid-template-columns: 1fr; gap: 14px; }
+  .repo-icon { height: 64px; }
+  .repo .open { justify-self: start; }
+}
