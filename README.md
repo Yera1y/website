@@ -14,11 +14,11 @@ Personal engineering portfolio, styled like a *contraption diagram* from Create 
 
 | Contraption diagram | Contraption diagram: weight |
 |---|---|
-| ![Contraption diagram](assets/reference/contraption%20diagram.png) | ![Empty Contraption diagram](assets/reference/2026-10-27_10.43.30.png) |
+| ![Contraption diagram](assets/reference/contraption%20diagram.png) | ![Empty Contraption diagram](assets/reference/block-open.png) |
 
 | Contraption diagram 2 | Airship and balloon schematics |
 |---|---|
-| ![Note toggled Contraption diagram](assets/reference/2026-10-27_10.43.39.png) | ![Airship and balloon schematics](assets/reference/airship-and-balloon-schematics-v0-47vjwku15vwg1.webp) |
+| ![Note toggled Contraption diagram](assets/reference/block-open.png) | ![Airship and balloon schematics](assets/reference/airship-and-balloon-schematics.webp) |
 
 The reference images document the visual direction for the paper menu, colored tabs,
 blueprint layout, force diagrams, and handwritten technical annotations. They are

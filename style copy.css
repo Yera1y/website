@@ -16,7 +16,7 @@
 body {
   margin: 0;
   color: var(--text);
-  background: #e7e1cf;
+  background: var(--blue);
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
@@ -61,8 +61,9 @@ a {
 }
 
 .paper {
+  position: relative;
   padding: 16px;
-  background: #fff;
+  background: var(--paper);
 }
 
 .paper ul {
@@ -83,6 +84,17 @@ a {
   font-weight: bold;
 }
 
+.paper .doodle {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  width: 48px;
+  height: 48px;
+  fill: #dcc3a4;
+  opacity: 0.85;
+  shape-rendering: crispEdges;
+}
+
 .sheet-wrap {
   min-width: 0;
 }
@@ -91,7 +103,7 @@ a {
   position: relative;
   min-height: 100vh;
   padding: 56px 48px 32px;
-  background: #fff;
+  background: var(--paper);
 }
 
 .tools {
@@ -109,7 +121,7 @@ a {
 .tool-menu {
   padding: 4px 8px;
   border: 1px solid #777;
-  background: #fff;
+  background: var(--paper);
   cursor: pointer;
 }
 
