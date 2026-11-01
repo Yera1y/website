@@ -28,9 +28,9 @@ kept separate from the site's own preview image.
 
 | Element | What it does |
 |---|---|
-| Colored bookmarks | Go to another **page**. The bookmark of the current page are made shorter. |
-| Text lines on the paper | Jump to a **section on current page**. The line for the section in view is highlighted. |
-| tool button | **Shows or hides the whole menu** |
+| Colored bookmarks | Go to another **page**. The bookmark of the current page is made shorter. |
+| Text lines on the paper | Jump to a **section on the current page**. The line for the section in view is highlighted. |
+| First tool button | **Shows or hides the whole menu** (remembered between pages) |
 
 The other three tool buttons are placeholders with no function yet.
 
@@ -38,19 +38,14 @@ The other three tool buttons are placeholders with no function yet.
 
 ```
 website/
-├── content/            the text of every page, one JSON file per page
-│   ├── home.json
-│   └── project-01.json (02, 03, ...)
-├── templates/          the markup: base.html (shared shell), home.html, project.html
-├── build.py            generates the .html files below (Python 3, no installs)
-├── index.html          GENERATED homepage
-├── project-01.html     GENERATED project pages (02, 03, ...)
+├── index.html          homepage
+├── project-01.html     project pages (02, 03, ...)
 ├── style.css           all styling
-├── site.js             tooltips, current-section highlight, menu toggle, page-change animation
+├── site.js             tooltips, current-section highlight, menu toggle
 ├── fonts/              self-hosted fonts
 ├── assets/project-01/  photos for each project (02, 03, ...)
 ├── assets/reference/   visual reference images
-└── docs/preview.png   homepage screenshot for this README
+└── assets/docs/        homepage screenshot for this README
 ```
 
 ## Credits

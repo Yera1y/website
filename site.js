@@ -1,5 +1,5 @@
 (function () {
-  /* ---- tooltip: <el data-tip-name="Gravity" data-tip-text="force of" data-tip-val="5.50 pN" data-tip-color="#3fb37a"> ---- */
+
   var tip = document.createElement('div');
   tip.className = 'tip';
   tip.setAttribute('role', 'tooltip');
@@ -35,7 +35,26 @@
     el.addEventListener('blur', function () { tip.classList.remove('on'); });
   });
 
-  /* ---- highlight the paper row for the section currently in view ---- */
+  var root = document.documentElement;
+  var btn = document.querySelector('.tool-menu');
+  function setMenu(on, save) {
+    root.classList.toggle('menu-off', !on);
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (save) { try { localStorage.setItem('menu', on ? 'on' : 'off'); } catch (e) {} }
+  }
+  setMenu(!root.classList.contains('menu-off'), false);
+  if (btn) btn.addEventListener('click', function () { setMenu(root.classList.contains('menu-off'), true); });
+
+  document.querySelectorAll('.row > .figure').forEach(function (fig) {
+    var img = fig.querySelector('img');
+    if (!img || fig.style.getPropertyValue('--r')) return;
+    img.loading = 'eager';
+    function measure() {
+      if (img.naturalWidth) fig.style.setProperty('--r', (img.naturalWidth / img.naturalHeight).toFixed(4));
+    }
+    if (img.complete) measure(); else img.addEventListener('load', measure);
+  });
+
   var links = Array.prototype.slice.call(document.querySelectorAll('.paper li a[href^="#"]'));
   if (!links.length || !('IntersectionObserver' in window)) return;
   var map = {};
@@ -52,38 +71,8 @@
   });
   mark(links[0].getAttribute('href').slice(1));
 
-  /* the last section can't reach the trigger band once the page ends, so pin it at the bottom */
   var last = links[links.length - 1].getAttribute('href').slice(1);
   window.addEventListener('scroll', function () {
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) mark(last);
   }, { passive: true });
-})();
-
-(function () {
-  var root = document.documentElement;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* first tool button: show / hide the menu, remembered between pages */
-  var btn = document.querySelector('.tool-menu');
-  function setMenu(on, save) {
-    root.classList.toggle('menu-off', !on);
-    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    if (save) { try { localStorage.setItem('menu', on ? 'on' : 'off'); } catch (e) {} }
-  }
-  setMenu(!root.classList.contains('menu-off'), false);
-  if (btn) btn.addEventListener('click', function () { setMenu(root.classList.contains('menu-off'), true); });
-
-  /* page change: clear the top sheet before the next page deals its own sheet in */
-  function norm(p) { return p.replace(/index\.html$/, ''); }
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('a[href]') : null;
-    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || reduce) return;
-    var u = new URL(a.href, location.href);
-    if (u.protocol !== location.protocol || u.host !== location.host) return;
-    if (norm(u.pathname) === norm(location.pathname)) return;
-    e.preventDefault();
-    root.classList.add('leaving');
-    setTimeout(function () { location.href = a.href; }, 300);
-  });
-  window.addEventListener('pageshow', function (e) { if (e.persisted) root.classList.remove('leaving'); });
 })();
