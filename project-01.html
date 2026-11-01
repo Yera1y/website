@@ -29,9 +29,12 @@
         <ul>
           <li><a href="#heading" style="--c:var(--green)">Heading</a></li>
           <li><a href="#information" style="--c:var(--brown)">Information</a></li>
-          <li><a href="#photos" style="--c:var(--orange)">Photos</a></li>
           <li><a href="#research" style="--c:var(--purple)">Research</a></li>
+          <li><a href="#build" style="--c:var(--orange)">Build</a></li>
+          <li><a href="#vision" style="--c:var(--red)">Computer vision</a></li>
+          <li><a href="#experiments" style="--c:var(--orange)">Experiments</a></li>
           <li><a href="#results" style="--c:var(--red)">Results</a></li>
+          <li><a href="#github" style="--c:var(--blue)">Resources</a></li>
           <li class="blank" aria-hidden="true"></li>
         </ul>
         <svg class="doodle" viewBox="0 0 12 12" aria-hidden="true"><path d="M9 0h2v1h-2zM8 1h4v1h-4zM8 2h4v1h-4zM8 3h3v1h-3zM7 4h2v1h-2zM6 5h2v1h-2zM5 6h2v1h-2zM4 7h2v1h-2zM1 8h4v1h-4zM0 9h4v1h-4zM0 10h4v1h-4zM1 11h2v1h-2z"/></svg>
@@ -56,60 +59,196 @@
       </a>
 
 <section id="heading">
-  <span class="eq" style="left:46%; top:-34px" aria-hidden="true">F = ma</span>
-  <p class="label">PRJ-01 / Technical project</p>
-  <h1 style="font-size:clamp(34px,4.6vw,60px)">WeedZap</h1>
-  <p class="tagline">Lazer & mechanical weeding system</p>
+  <span class="eq" style="left:46%; top:-34px" aria-hidden="true">7 W · 450 nm</span>
+  <p class="label">PRJ-01 / Research & engineering</p>
+  <h1 style="font-size:clamp(54px,7.5vw,100px)">WeedZap</h1>
+  <p class="tagline">Hybrid Lazer & Mechanical weeding system.</p>
+  <p>A hybrid weed-removal prototype combining computer vision, targeted diode-laser treatment and mechanical cultivation.</p>
+  <div class="tags" style="margin:18px 0 26px">
+    <span>COMPUTER VISION</span><span>ROBOTICS</span><span>PRECISION AGRICULTURE</span>
+  </div>
+  
+  <div class="grid" style="--grid-columns: 9fr 8fr">
+    <figure class="figure">
+      <img src="assets/project-01/weedzap-stand.jpg" alt="WeedZap prototype during outdoor testing" loading="lazy">
+      <figcaption>WeedZap stand at National Science Project Competition “Daryn”</figcaption>
+    </figure>
+    <div class="grid" style="--grid-columns: 1fr">
+    <figure class="figure">
+      <img src="assets/project-01/weedzap-prototype.jpg"
+           alt="First landscape photo"
+           loading="lazy">
+      <figcaption>First photo</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="assets/project-01/weedzap-workbench.jpg"
+           alt="Second landscape photo"
+           loading="lazy">
+      <figcaption>Second photo</figcaption>
+    </figure>
+  </div>
+  </div>
 </section>
 
 <section id="information">
-  <p class="label"><b>01</b> Information</p>
+  <p class="label"><b>01</b> Project overview</p>
   <div class="card">
     <dl class="rows">
-      <div><dt>Role</dt><dd>Lead Engineer, Builder, Researcher</dd></div>
-      <div><dt>Date</dt><dd>2025-2026</dd></div>
-      <div><dt>Tools</dt><dd>CAD, 3D printing, Raspberry Pi, Computer Vision</dd></div>
-      <div><dt>Goal</dt><dd>Make a system that can effectively remove weeds from a garden using a combination of laser and mechanical methods.</dd></div>
-      <div><dt>Specs</dt><dd>xyz kinematics, raspberry pi5, 2 swappable head mounts</dd></div>
+      <div><dt>Role</dt><dd>Lead Engineer · Researcher · Builder</dd></div>
+      <div><dt>Team</dt><dd>Yeraly Salybayev & Nurasyl Tursynbay</dd></div>
+      <div><dt>Timeline</dt><dd>2025-2026</dd></div>
+      <div><dt>Core stack</dt><dd>7W diod · Raspberry Pi 5 · YOLOv8 · CAD</dd></div>
+      <div><dt>Goal</dt><dd>Develop and test a hybrid system for selective, herbicide-free weed removal.</dd></div>
     </dl>
   </div>
 </section>
 
-<section id="photos">
-  <span class="eq" style="right:0; top:-6px" aria-hidden="true">Σmr = R</span>
-  <p class="label"><b>02</b> Photos</p>
-  <div class="photos">
-    <div class="thumb"><img src="assets/project-01/test.jpg" alt="Prototype" loading="lazy"></div>
-    <div class="thumb">PHOTO 2
-    </div>
-    <div class="thumb">PHOTO 3
-    </div>
-    <div class="thumb">CAD VIEW
-    </div>
+<section id="research">
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">RESEARCH / 01</span>
+  <p class="label"><b>02</b> Research</p>
+  <h2 class="title">What's core problem?</h2>
+  <p>Conventional weed control often relies on manual labour or herbicides. We explored two emerging herbicide-free approaches and the trade-offs each introduces.</p>
+  <div class="grid" style="--columns:2">
+    <article class="card">
+      <img src="assets/project-01/mechanical-weeding-reference.jpg" alt="Mechanical agricultural weeding equipment" loading="lazy">
+      <div><h3>Mechanical weeding</h3><p>Reliable cultivation between crop rows, but physical tools disturb the soil and can be difficult to use close to crops.</p></div>
+    </article>
+    <article class="card">
+      <img src="assets/project-01/laser-weeding-reference.jpg" alt="Laser weeding agricultural equipment" loading="lazy">
+      <div><h3>Laser weeding</h3><p>Highly targeted thermal treatment without mechanical contact, but commercial systems can be expensive and technically complex.</p></div>
+    </article>
+  </div>
+  <div class="callout" style="--accent:var(--purple)">
+    <span class="code">OUR RESEARCH QUESTION</span>
+    <p>To analyze modern spot-weeding methods and confirm the effectiveness of the laser approach by developing a hybrid WeedZap prototype that combines laser and mechanical weed removal using computer vision.</p>
+  </div>
+  <p>We reviewed Garford InRow and Carbon Robotics systems, alongside made research on diode-laser weed treatment.</p>
+</section>
+
+<section id="build">
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">XYZ / BUILD</span>
+  <p class="label"><b>03</b> What we built</p>
+  <h2 class="title">CAD design, building and testing</h2>
+  <p>We developed a three-axis gantry prototype controlled by a Raspberry Pi 5. The platform was designed around interchangeable modules, allowing laser and mechanical approaches to be tested on one system.</p>
+  <div class="grid" style="--grid-columns: 1.7778fr 1fr">
+    <figure class="figure">
+      <img src="assets/project-01/weedzap-workbench.jpg" alt="WeedZap prototype on the engineering workbench" loading="lazy">
+      <figcaption>Prototype assembly</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/project-01/weedzap-lazer.jpg" alt="WeedZap prototype on the engineering workbench" loading="lazy">
+      <figcaption>Laser system</figcaption>
+    </figure>
+  </div>
+  <div class="grid" style="--columns:3">
+    <article class="card">
+      <img src="assets/project-01/weedzap-cad.jpg" alt="CAD drawing of the WeedZap mechanical frame" loading="lazy">
+      <div><h3>01 / Motion system</h3>
+      <p>XYZ gantry driven by NEMA-23 stepper motors and DM542 drivers.</p></div>
+    </article>
+    <article class="card">
+      <img src="assets/project-01/raspberry-pi.jpg" alt="Raspberry Pi 5 controller" loading="lazy">
+      <div><h3>02 / Control</h3>
+      <p>Raspberry Pi 5, Python server and a web interface for system control.</p></div>
+    </article>
+    <article class="card">
+      <img src="assets/project-01/laser-test.jpg" alt="Laser module during a controlled test" loading="lazy">
+      <div><h3>03 / Treatment heads</h3>
+      <p>7 W diode laser (approximately 450 nm) and a swappable mechanical cultivator attachment.</p></div>
+    </article>
+  </div>
+  <div class="grid" style="--columns:4">
+    <div class="stat"><b>7 W</b>Diode laser</div>
+    <div class="stat"><b>450 nm</b>Wavelength</div>
+    <div class="stat"><b>XYZ</b>Motion platform</div>
+    <div class="stat"><b>Pi 5</b>Main controller</div>
   </div>
 </section>
 
-<section id="research">
-  <p class="label"><b>03</b> Research</p>
-  <p>Theory, sources, design choices, calculations, sketches.</p>
-  <div class="formula">F = m · a</div>
-  <p>Explain how you got from the requirements to the final design.</p>
+<section id="vision">
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">YOLOv8 / CV</span>
+  <p class="label"><b>04</b> Computer vision</p>
+  <h2 class="title">Computer vision for weed detection</h2>
+  <p>We trained a custom YOLOv8 weed-detection model using images collected. The dataset was annotated for weed recognition and used to evaluate the model's ability to distinguish weeds against natural backgrounds.</p>
+  <div class="grid" style="--columns:2">
+    <figure class="figure"><img src="assets/project-01/cv-detection-1.jpg" alt="Weed detection model output with bounding boxes" loading="lazy"><figcaption>Detection output — sample 01</figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/cv-detection-2.jpg" alt="Weed detection model output on a plant image" loading="lazy"><figcaption>Detection output — sample 02</figcaption></figure>
+  </div>
+  <div class="grid" style="--columns:4">
+    <div class="stat"><b>4,203</b><span>Training images</span></div>
+    <div class="stat"><b>0.92</b><span>Precision</span></div>
+    <div class="stat"><b>0.88</b><span>Recall</span></div>
+    <div class="stat"><b>0.90</b><span>mAP@0.5</span></div>
+  </div>
+  <div class="callout" style="--accent:var(--purple)">
+    <span class="code">SAFE-ZONE</span>
+    <p>We implemented a morphological mask-expansion method (5 mm) to create a protective buffer around crop regions and reduce the risk of targeting cultivated plants.</p>
+  </div>
+  <p style="font-size:12px;color:var(--muted)"><strong>Development status:</strong> During the documented experimental phase, targeting was performed manually using a live video feed and reference frame. Full real-time integration of CV coordinates with the motion platform remained a future development step.</p>
+</section>
+
+<section id="experiments">
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">7 W × 2 s</span>
+  <p class="label"><b>05</b> Experiments</p>
+  <h2 class="title">Testing the laser treatment</h2>
+  <p>We tested short laser exposure directed at the base of the weed stem, then documented visible changes over five days. The main recorded treatment condition was 7 W for 1–2 seconds.</p>
+  <div class="grid" style="--columns:4">
+    <figure class="figure"><img src="assets/project-01/weed-day-0.jpg" alt="Weed before laser treatment" loading="lazy"><figcaption><b>DAY 0</b><span> Before treatment</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-1.jpg" alt="Weed one day after treatment" loading="lazy"><figcaption><b>DAY 1</b><span> Initial tissue darkening</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-3.jpg" alt="Weed three days after treatment" loading="lazy"><figcaption><b>DAY 3</b><span> Visible loss of turgor</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-5.jpg" alt="Weed five days after treatment" loading="lazy"><figcaption><b>DAY 5</b><span> Persistent wilting</span></figcaption></figure>
+  </div>
+  <div class="callout" style="--accent:var(--green)">
+    <strong>Observed outcome</strong>
+    <p>In the documented test series, 7W * (1~2)s exposure resulted in wilting in 80% of cases (N = 10). The photo observations showed progressive tissue darkening, loss of turgor and wilting over the following days.</p>
+  </div>
+  <p style="font-size:12px;color:var(--muted)">These are prototype-scale experimental results, not a claim of proven field-wide performance. Further trials and dose calibration are needed.</p>
 </section>
 
 <section id="results">
-  <span class="eq" style="right:0; top:-6px" aria-hidden="true">E = ½mv²</span>
-  <p class="label"><b>04</b> Results</p>
-  <div class="results-grid">
-    <div class="stat"><b>00</b>key number one</div>
-    <div class="stat"><b>00</b>key number two</div>
-    <div class="stat"><b>00</b>key number three</div>
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">RESULTS / 2025–26</span>
+  <p class="label"><b>06</b> Results & recognition</p>
+  <h2 class="title">What we achieved</h2>
+  <div class="grid" style="--columns:4">
+    <div class="stat"><b>2nd place</b>National Science Project Competition “Daryn”
+</div>
+    <div class="stat"><b>0.90</b>YOLOv8 mAP@0.5</div>
+    <div class="stat"><b>80%</b>Wilting in test series (N=10)</div>
+    <div class="stat"><b>&lt;$500</b>Estimated prototype cost in the documentation</div>
   </div>
-  <p>What worked, what failed, and what you would change next time.</p>
-  <div class="pager"><a class="btn" href="index.html">&larr; Home</a><a class="btn" href="project-02.html">Next project &rarr;</a></div>
+  <ul>
+    <li>Made a research on using low power 7W lazer for weeding purposes.</li>
+    <li>Conducted laser-treatment observations over five days.</li>
+    <li>Designed and tested a hybrid laser–mechanical weeding prototype.</li>
+    <li>Built a custom YOLOv8 dataset and detection model.</li>
+    <li>Implemented a 5 mm safe-zone mask expansion method.</li>
+    <li>Received 2nd place at the National Science Project Competition “Daryn” (2025).</li>
+    <li>Identified next steps: improved optics, crop recognition and further quantitative testing.</li>
+  </ul>
 </section>
 
-
-      <p class="foot">© 2026</p>
+<section id="github">
+  <span class="eq" style="right:0; top:-6px" aria-hidden="true">OPEN / SOURCE</span>
+  <p class="label"><b>07</b> Project resources</p>
+  <h2 class="title">Explore the project</h2>
+  <p>Want to dig deeper into the project? Explore the project repository and research documentation.</p>
+  <a class="repo" href="https://github.com/Yera1y/" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile; replace with the exact WeedZap repository URL">
+    <span class="repo-icon" aria-hidden="true"><svg viewBox="0 0 22 12"><path d="M5 0h2v1h-2zM12 0h2v1h-2zM15 0h2v1h-2zM4 1h2v1h-2zM12 1h2v1h-2zM16 1h2v1h-2zM3 2h2v1h-2zM12 2h2v1h-2zM17 2h2v1h-2zM2 3h2v1h-2zM11 3h2v1h-2zM18 3h2v1h-2zM1 4h2v1h-2zM11 4h2v1h-2zM19 4h2v1h-2zM0 5h2v1h-2zM11 5h2v1h-2zM20 5h2v1h-2zM0 6h2v1h-2zM10 6h2v1h-2zM20 6h2v1h-2zM1 7h2v1h-2zM10 7h2v1h-2zM19 7h2v1h-2zM2 8h2v1h-2zM10 8h2v1h-2zM18 8h2v1h-2zM3 9h2v1h-2zM9 9h2v1h-2zM17 9h2v1h-2zM4 10h2v1h-2zM9 10h2v1h-2zM16 10h2v1h-2zM5 11h2v1h-2zM9 11h2v1h-2zM15 11h2v1h-2z"/></svg></span>
+    <span class="repo-text">
+      <span class="code">GITHUB / PROJECT SOURCE</span>
+      <strong>WeedZap repository</strong>
+      <span class="desc">Replace this profile link with the direct repository URL before publishing.</span>
+    </span>
+    <span class="open">Open GitHub &rarr;</span>
+  </a>
+  <div class="card">
+    <span class="code">RESEARCH DOCUMENTATION</span>
+    <p>WeedZap — autonomous laser-based precision weed-removal system (2025).</p>
+  </div>
+  <div class="pager"><a class="btn" href="index.html">&larr; Home</a><a class="btn" href="project-03.html">Next project &rarr;</a></div>
+</section>
+      <p class="foot">© 2026 · WEEDZAP RESEARCH PROJECT</p>
     </main>
   </div>
 </div>
