@@ -384,7 +384,6 @@ section > p,
   align-items: stretch;
 }
 .grid > * { min-width: 0; }
-
 .tags span {
   display: inline-block;
   margin: 0 6px 6px 0;
@@ -503,6 +502,12 @@ section > .figure { margin: 22px 0 28px; }
 .tile > div { padding: 12px 14px 4px; }
 .tile h3 { margin: 0 0 7px; font-size: 26px; }
 .tile p { font-size: 13px; }
+.build-label {
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 8px 14px 6px;
+}
+.build-label h3 { margin: 0; font: 24px/1.1 var(--pixel); }
 
 .stat {
   padding: 14px 16px 12px;

@@ -8,7 +8,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
   <script>try{if(localStorage.getItem('menu')==='off')document.documentElement.classList.add('menu-off')}catch(e){}</script>
 </head>
 <body>
@@ -139,19 +138,40 @@
       <figcaption>Laser system</figcaption>
     </figure>
   </div>
-  <div class="grid" style="--columns:3">
-    <article class="tile">
-      <img src="assets/project-01/weedzap-cad.jpg" alt="CAD drawing of the WeedZap mechanical frame" loading="lazy">
-      <div><h3>01 / Motion system</h3><p>XYZ gantry driven by NEMA-23 stepper motors and DM542 drivers.</p></div>
-    </article>
-    <article class="tile">
-      <img src="assets/project-01/raspberry-pi5.webp" alt="Raspberry Pi 5 controller" loading="lazy">
-      <div><h3>02 / Control</h3><p>Raspberry Pi 5, Python server and a web interface for system control.</p></div>
-    </article>
-    <article class="tile">
-      <img src="assets/project-01/laser-test.jpg" alt="Laser module during a controlled test" loading="lazy">
-      <div><h3>03 / Treatment heads</h3><p>7 W diode laser (approximately 450 nm) and a swappable mechanical cultivator attachment.</p></div>
-    </article>
+  <div>
+    <div class="card build-label"><h3>01 / Motion system</h3></div>
+    <div class="row">
+      <figure class="figure">
+        <img src="assets/project-01/weedzap-cad.webp" alt="CAD drawing of the WeedZap" loading="lazy">
+        <figcaption>XYZ gantry design</figcaption>
+      </figure>
+      <figure class="figure">
+          <img src="assets/project-01/gantry-current_result.webp" alt="WeedZap gantry during operation" loading="lazy">
+          <figcaption>Gantry driven by NEMA-23 stepper motors and DM542 drivers</figcaption>
+        </figure>
+      </div>
+      <div class="card build-label"><h3>02 / Control</h3></div>
+      <div class="row">
+        <figure class="figure">
+          <img src="assets/project-01/raspberry-pi5.webp" alt="Raspberry Pi 5 controller" loading="lazy">
+          <figcaption>Raspberry Pi 5 controller</figcaption>
+      </figure>
+      <figure class="figure">
+          <img src="assets/project-01/gantry-detection_result.webp" alt="WeedZap gantry tracking a target" loading="lazy">
+          <figcaption>Python server and web interface for system control</figcaption>
+        </figure>
+      </div>
+      <div class="card build-label"><h3>03 / Treatment heads</h3></div>
+      <div class="row">
+        <figure class="figure">
+          <img src="assets/project-01/lazer-head.webp" alt="Laser treatment head" loading="lazy">
+          <figcaption>7 W diode laser, approximately 450 nm</figcaption>
+      </figure>
+      <figure class="figure">
+          <img src="assets/project-01/mechanical-head.webp" alt="Mechanical treatment head" loading="lazy">
+          <figcaption>Swappable mechanical cultivator attachment</figcaption>
+        </figure>
+      </div>
   </div>
   <div class="grid" style="--columns:4">
     <div class="stat"><b>7 W</b>Diode laser</div>
