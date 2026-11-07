@@ -67,16 +67,16 @@
 
   <div class="grid" style="--grid-columns:9fr 8fr; --lines:2">
     <figure class="figure tall">
-      <img src="assets/project-01/weedzap-stand.jpg" alt="WeedZap prototype during outdoor testing" loading="lazy">
+      <img src="assets/project-01/weedzap-stand.webp" alt="WeedZap stand" loading="lazy">
       <figcaption>WeedZap stand at National Science Project Competition “Daryn”</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/project-01/weedzap-prototype.jpg" alt="First landscape photo" loading="lazy">
-      <figcaption>First photo</figcaption>
+      <img src="assets/project-01/v1-field-robot.webp" alt="First landscape photo" loading="lazy">
+      <figcaption>WeedZap prototype during outdoor testing</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/project-01/weedzap-workbench.jpg" alt="Second landscape photo" loading="lazy">
-      <figcaption>Second photo</figcaption>
+      <img src="assets/project-01/gantry-detection_result.webp" alt="Second landscape photo" loading="lazy">
+      <figcaption>Computer vision detection</figcaption>
     </figure>
   </div>
 </section>
@@ -101,12 +101,20 @@
   <p>Conventional weed control often relies on manual labour or herbicides. We explored two emerging herbicide-free approaches and the trade-offs each introduces.</p>
   <div class="grid" style="--columns:2">
     <article class="tile">
-      <img src="assets/project-01/mechanical-weeding-reference.jpg" alt="Mechanical agricultural weeding equipment" loading="lazy">
-      <div><h3>Mechanical weeding</h3><p>Reliable cultivation between crop rows, but physical tools disturb the soil and can be difficult to use close to crops.</p></div>
+      <img src="assets/project-01/robocop-mechanical.webp" alt="Mechanical agricultural weeding equipment" loading="lazy">
+      <div>
+          <h3>Mechanical weeding</h3>
+          <p>Reliable cultivation between crop rows, but physical tools disturb the soil and can be difficult to use close to crops.</p>
+          <p class="src"><a href="https://garford.de/hacktechnik/inrow/" target="_blank" rel="noopener noreferrer">Garford InRow &rarr;</a></p>
+      </div>
     </article>
     <article class="tile">
-      <img src="assets/project-01/laser-weeding-reference.jpg" alt="Laser weeding agricultural equipment" loading="lazy">
-      <div><h3>Laser weeding</h3><p>Highly targeted thermal treatment without mechanical contact, but commercial systems can be expensive and technically complex.</p></div>
+      <img src="assets/project-01/LaserWeeder-G2-600.webp" alt="Laser weeding agricultural equipment" loading="lazy">
+      <div>
+        <h3>Laser weeding</h3>
+        <p>Highly targeted thermal treatment without mechanical contact, but commercial systems can be expensive and technically complex.</p>
+        <p class="src"><a href="https://carbonrobotics.com/laserweeder-g2" target="_blank" rel="noopener noreferrer">Carbon Robotics LaserWeeder G2 &rarr;</a></p>
+      </div>
     </article>
   </div>
   <div class="callout" style="--c:var(--purple)">
@@ -123,7 +131,7 @@
   <p>We developed a three-axis gantry prototype controlled by a Raspberry Pi 5. The platform was designed around interchangeable modules, allowing laser and mechanical approaches to be tested on one system.</p>
   <div class="row">
     <figure class="figure">
-      <img src="assets/project-01/weedzap-workbench.jpg" alt="WeedZap prototype on the engineering workbench" loading="lazy">
+      <img src="assets/project-01/weedzap-workbench.webp" alt="WeedZap prototype on the engineering workbench" loading="lazy">
       <figcaption>Prototype assembly</figcaption>
     </figure>
     <figure class="figure">
@@ -137,7 +145,7 @@
       <div><h3>01 / Motion system</h3><p>XYZ gantry driven by NEMA-23 stepper motors and DM542 drivers.</p></div>
     </article>
     <article class="tile">
-      <img src="assets/project-01/raspberry-pi.jpg" alt="Raspberry Pi 5 controller" loading="lazy">
+      <img src="assets/project-01/raspberry-pi5.webp" alt="Raspberry Pi 5 controller" loading="lazy">
       <div><h3>02 / Control</h3><p>Raspberry Pi 5, Python server and a web interface for system control.</p></div>
     </article>
     <article class="tile">
@@ -159,8 +167,8 @@
   <h2>Computer vision for weed detection</h2>
   <p>We trained a custom YOLOv8 weed-detection model using images collected. The dataset was annotated for weed recognition and used to evaluate the model's ability to distinguish weeds against natural backgrounds.</p>
   <div class="row">
-    <figure class="figure"><img src="assets/project-01/cv-detection-1.jpg" alt="Weed detection model output with bounding boxes" loading="lazy"><figcaption>Detection output — sample 01</figcaption></figure>
-    <figure class="figure"><img src="assets/project-01/cv-detection-2.jpg" alt="Weed detection model output on a plant image" loading="lazy"><figcaption>Detection output — sample 02</figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/path-planning.webp" alt="Weed detection model output with bounding boxes" loading="lazy"><figcaption>Detection output — sample 01</figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-pose-model.webp" alt="Weed detection model output on a plant image" loading="lazy"><figcaption>Detection output — sample 02</figcaption></figure>
   </div>
   <div class="grid" style="--columns:4">
     <div class="stat"><b>4,203</b>Training images</div>
@@ -181,10 +189,10 @@
   <h2>Testing the laser treatment</h2>
   <p>We tested short laser exposure directed at the base of the weed stem, then documented visible changes over five days. The main recorded treatment condition was 7 W for 1–2 seconds.</p>
   <div class="row">
-    <figure class="figure"><img src="assets/project-01/weed-day-0.jpg" alt="Weed before laser treatment" loading="lazy"><figcaption><b>DAY 0</b><span> Before treatment</span></figcaption></figure>
-    <figure class="figure"><img src="assets/project-01/weed-day-1.jpg" alt="Weed one day after treatment" loading="lazy"><figcaption><b>DAY 1</b><span> Initial tissue darkening</span></figcaption></figure>
-    <figure class="figure"><img src="assets/project-01/weed-day-3.jpg" alt="Weed three days after treatment" loading="lazy"><figcaption><b>DAY 3</b><span> Visible loss of turgor</span></figcaption></figure>
-    <figure class="figure"><img src="assets/project-01/weed-day-5.jpg" alt="Weed five days after treatment" loading="lazy"><figcaption><b>DAY 5</b><span> Persistent wilting</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-0.webp" alt="Weed before laser treatment" loading="lazy"><figcaption><b>DAY 0</b><span> Before treatment</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-1.webp" alt="Weed one day after treatment" loading="lazy"><figcaption><b>DAY 1</b><span> Initial tissue darkening</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-3.webp" alt="Weed three days after treatment" loading="lazy"><figcaption><b>DAY 3</b><span> Visible loss of turgor</span></figcaption></figure>
+    <figure class="figure"><img src="assets/project-01/weed-day-5.webp" alt="Weed five days after treatment" loading="lazy"><figcaption><b>DAY 5</b><span> Persistent wilting</span></figcaption></figure>
   </div>
   <div class="callout" style="--c:var(--green)">
     <strong>Observed outcome</strong>
@@ -219,7 +227,7 @@
   <p class="label"><b>07</b> Project resources</p>
   <h2>Explore the project</h2>
   <p>Want to dig deeper into the project? Explore the project repository and research documentation.</p>
-  <a class="repo" href="https://github.com/Yera1y/" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile; replace with the exact WeedZap repository URL">
+  <a class="repo" href="https://github.com/Nurasylpro/Weedzap" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile; replace with the exact WeedZap repository URL">
     <span class="repo-icon" aria-hidden="true"><svg viewBox="0 0 22 12"><path d="M5 0h2v1h-2zM12 0h2v1h-2zM15 0h2v1h-2zM4 1h2v1h-2zM12 1h2v1h-2zM16 1h2v1h-2zM3 2h2v1h-2zM12 2h2v1h-2zM17 2h2v1h-2zM2 3h2v1h-2zM11 3h2v1h-2zM18 3h2v1h-2zM1 4h2v1h-2zM11 4h2v1h-2zM19 4h2v1h-2zM0 5h2v1h-2zM11 5h2v1h-2zM20 5h2v1h-2zM0 6h2v1h-2zM10 6h2v1h-2zM20 6h2v1h-2zM1 7h2v1h-2zM10 7h2v1h-2zM19 7h2v1h-2zM2 8h2v1h-2zM10 8h2v1h-2zM18 8h2v1h-2zM3 9h2v1h-2zM9 9h2v1h-2zM17 9h2v1h-2zM4 10h2v1h-2zM9 10h2v1h-2zM16 10h2v1h-2zM5 11h2v1h-2zM9 11h2v1h-2zM15 11h2v1h-2z"/></svg></span>
     <span class="repo-text">
       <span class="code">GITHUB / PROJECT SOURCE</span>

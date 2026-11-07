@@ -8,7 +8,7 @@ Personal engineering portfolio, styled like a *contraption diagram* from Create 
 
 ### Homepage
 
-![Homepage preview](assets/docs/preview.png)
+![Homepage preview](assets/docs/preview.webp)
 
 ### Visual references: captured in game
 
